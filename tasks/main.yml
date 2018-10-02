@@ -1,2 +1,34 @@
 ---
-# tasks file for ansible-role-clamav-alerting
+
+# Reference: https://www.lisenet.com/2014/automate-clamav-to-perform-daily-system-scan-and-send-email-notifications-on-linux/
+
+- name: install required packages for email alerting
+  package:
+    name: "{{ clamav_alerting_packages }}"
+  when: clamav_alerting_enable_email
+
+- name: configuring ssmtp
+  template:
+    src: ssmtp.conf.j2
+    dest: /etc/ssmtp/ssmtp.conf 
+    mode: 0600
+  when: clamav_alerting_enable_email
+
+- name: deploy clamscan script
+  template:
+    src: clamscan.sh.j2
+    dest: "{{ clamav_alerting_email_script_location }}"
+    mode: 0755
+  when: clamav_alerting_enable_email
+
+- name: configure cron
+  cron:
+    name: "{{ item.name }}"
+    minute: "{{ item.minute }}"
+    hour: "{{ item.hour }}"
+    month: "{{ item.month }}"
+    day: "{{ item.day }}"
+    job: "{{ item.job }}"
+    user: "{{ item.user }}"
+  with_items:
+    - "{{ clamav_alerting_cron_jobs }}"

@@ -1,2 +1,33 @@
 ---
-# defaults file for ansible-role-clamav-alerting
+
+clamav_alerting_packages:
+  - ssmtp
+  - heirloom-mailx
+
+clamav_alerting_root: postmaster
+clamav_alerting_mailhub: mail
+clamav_alerting_AuthUser: user1
+clamav_alerting_AuthPass: changeme
+clamav_alerting_UseTLS: YES
+clamav_alerting_AuthMethod: LOGIN
+clamav_alerting_RewriteDomain: example.com
+clamav_alerting_Hostname: debian.example.com
+clamav_alerting_FromLineOverride: yes
+
+clamav_alerting_enable_email: yes
+clamav_alerting_email_script_location: /root/clamscan.sh
+
+clamav_alerting_cron_jobs:
+  - name: clamscan
+    minute: 0
+    hour: 3
+    month: "*"
+    day: "*"
+    job: /root/clamscan.sh
+    user: root
+
+clamav_alerting_logfile: /var/log/clamav/scheduled_clamav_scan-$(date +'%Y-%m-%d').log
+clamav_alerting_email_msg: Please see the log file attached.
+clamav_alerting_email_from: clamav-daily@example.com
+clamav_alerting_email_to: username@example.com
+clamav_alerting_dirtoscan: /home
