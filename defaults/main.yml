@@ -1,14 +1,14 @@
 ---
 
-clamav_alerting_root: postmaster
-clamav_alerting_mailhub: mail
-clamav_alerting_AuthUser: user1
-clamav_alerting_AuthPass: changeme
-clamav_alerting_UseTLS: YES
-clamav_alerting_AuthMethod: LOGIN
-clamav_alerting_RewriteDomain: example.com
-clamav_alerting_Hostname: debian.example.com
-clamav_alerting_FromLineOverride: yes
+#clamav_alerting_root: postmaster
+#clamav_alerting_mailhub: mail
+#clamav_alerting_AuthUser: user1
+#clamav_alerting_AuthPass: changeme
+#clamav_alerting_UseTLS: YES
+#clamav_alerting_AuthMethod: LOGIN
+#clamav_alerting_RewriteDomain: example.com
+#clamav_alerting_Hostname: debian.example.com
+#clamav_alerting_FromLineOverride: yes
 
 clamav_alerting_enable_email: yes
 clamav_alerting_email_script_location: /root/clamscan.sh
