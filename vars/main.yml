@@ -1,2 +1,5 @@
 ---
-# vars file for ansible-role-clamav-alerting
+
+clamav_alerting_packages:
+  - ssmtp
+  - heirloom-mailx

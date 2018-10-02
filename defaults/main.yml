@@ -1,9 +1,5 @@
 ---
 
-clamav_alerting_packages:
-  - ssmtp
-  - heirloom-mailx
-
 clamav_alerting_root: postmaster
 clamav_alerting_mailhub: mail
 clamav_alerting_AuthUser: user1
