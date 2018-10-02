@@ -3,3 +3,4 @@
 clamav_alerting_packages:
   - ssmtp
   - heirloom-mailx
+  - mailutils

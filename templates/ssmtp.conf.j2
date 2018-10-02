@@ -1,9 +1,27 @@
+{% if clamav_alerting_root is defined %}
 root={{ clamav_alerting_root }}
+{% endif %}
+{% if clamav_alerting_mailhub is defined %}
 mailhub={{ clamav_alerting_mailhub }}
+{% endif %}
+{% if clamav_alerting_AuthUser is defined %}
 AuthUser={{ clamav_alerting_AuthUser }}
+{% endif %}
+{% if clamav_alerting_AuthPass is defined %}
 AuthPass={{ clamav_alerting_AuthPass }}
+{% endif %}
+{% if clamav_alerting_UseTLS is defined %}
 UseTLS={{ clamav_alerting_UseTLS }}
+{% endif %}
+{% if clamav_alerting_AuthMethod is defined %}
 AuthMethod={{ clamav_alerting_AuthMethod }}
+{% endif %}
+{% if clamav_alerting_RewriteDomain is defined %}
 RewriteDomain={{ clamav_alerting_RewriteDomain }}
+{% endif %}
+{% if clamav_alerting_Hostname is defined %}
 Hostname={{ clamav_alerting_Hostname }}
+{% endif %}
+{% if clamav_alerting_FromLineOverride is defined %}
 FromLineOverride={{ clamav_alerting_FromLineOverride }}
+{% endif %}
