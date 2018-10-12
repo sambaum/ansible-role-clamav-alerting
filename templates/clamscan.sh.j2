@@ -28,7 +28,7 @@ else
  echo "Starting a daily scan of "$DIRTOSCAN" directory.
  Amount of data to be scanned is "$DIRSIZE".";
 
- clamscan -ri "$DIRTOSCAN" &>"$LOGFILE";
+ clamscan -ri "$DIRTOSCAN" {{ clamav_alerting_cmd_options }} &>"$LOGFILE";
 fi
 
 # get the value of "Infected lines" 

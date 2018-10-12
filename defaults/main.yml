@@ -27,4 +27,6 @@ clamav_alerting_email_msg: Please see the log file attached.
 clamav_alerting_email_from: clamav-daily@example.com
 clamav_alerting_email_to: username@example.com
 clamav_alerting_dirtoscan: /home
+clamav_alerting_cmd_options: ""
+clamav_alerting_create_extra_dirs: []
 clamav_alerting_update_database: true

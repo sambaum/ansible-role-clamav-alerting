@@ -32,3 +32,10 @@
     user: "{{ item.user }}"
   with_items:
     - "{{ clamav_alerting_cron_jobs }}"
+
+- name: create extra directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ clamav_alerting_create_extra_dirs }}"
