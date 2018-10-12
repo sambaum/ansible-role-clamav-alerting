@@ -9,9 +9,11 @@ EMAIL_FROM="{{ clamav_alerting_email_from }}";
 EMAIL_TO="{{ clamav_alerting_email_to }}";
 DIRTOSCAN="{{ clamav_alerting_dirtoscan }}";
 
+{% if clamav_alerting_update_database %}
 # Update ClamAV database
 echo "Looking for ClamAV database updates...";
 freshclam --quiet;
+{% endif %}
 
 TODAY=$(date +%u);
 
